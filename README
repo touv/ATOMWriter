@@ -1,6 +1,10 @@
 Exemple :
 
-$f = new ATOMWriter(new XMLWriter, true);
+$xmlWriter = new XMLWriter();
+$xmlWriter->openUri('php://output');
+$xmlWriter->setIndent(true);
+
+$f = new ATOMWriter($xmlWriter, true);
 
 $f->startFeed('urn:tps:com-idx')
     ->writeStartIndex(1)
